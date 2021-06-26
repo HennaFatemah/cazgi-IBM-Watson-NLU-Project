@@ -38,6 +38,7 @@ app.get("/url/emotion", (req,res) => {
             }
         }
     }
+
     getNLUInstance().analyze(analyzeParamsEmotion).then(analysisResults => {
         console.log(JSON.stringify(analysisResults, null, 2));
         return res.send(analysisResults.result.emotion.document.emotion);
@@ -55,6 +56,7 @@ app.get("/url/sentiment", (req,res) => {
             }
         }
     }
+
     getNLUInstance().analyze(analyzeParamsSentiment)
     .then(analysisResults => {
     console.log(JSON.stringify(analysisResults, null, 2));
@@ -74,6 +76,7 @@ app.get("/text/emotion", (req,res) => {
             }
         }
     }
+
     getNLUInstance().analyze(analyzeParamsEmotion).then(analysisResults => {
         console.log(JSON.stringify(analysisResults, null, 2));
         return res.send(analysisResults.result.emotion.document.emotion);
@@ -91,6 +94,7 @@ app.get("/text/sentiment", (req,res) => {
             }
         }
     }
+    
     getNLUInstance().analyze(analyzeParamsSentiment).then(analysisResults => {
         console.log(JSON.stringify(analysisResults, null, 2));
         return res.send(analysisResults.result.sentiment.document.label);
